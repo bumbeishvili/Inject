@@ -37,7 +37,7 @@ this script draws additional charts using bloombergs rest data API
     js = d.createElement(s); js.id = id;
     js.onload = function(){
         // remote script has loaded
-        setTimeOut(()=>{
+        setTimeout(()=>{
           d3.select('body').html('')
           chart()
         },1000)
