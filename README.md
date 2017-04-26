@@ -1,11 +1,9 @@
 # inject
-Script Injecting
+## Script Injecting
 
 
 
-This repo will serve js scripts, which can be injected into websites
-
-using console, bookmark tab, tampermonkey or type of injectors
+This repo will serve js scripts, which can be injected into websites using console, bookmark tab, tampermonkey or other type of injectors
 
 
 # Sites : 
