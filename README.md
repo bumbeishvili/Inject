@@ -37,9 +37,11 @@ this script draws additional charts using bloombergs rest data API
     js = d.createElement(s); js.id = id;
     js.onload = function(){
         // remote script has loaded
-        debugger;
-        d3.select('body').html('')
+        setTimeOut(()=>{
+          d3.select('body').html('')
           chart()
+        },1000)
+      
     };
     js.src = "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js";
     fjs.parentNode.insertBefore(js, fjs);
@@ -99,7 +101,6 @@ var svg = d3.select("body")
 d3.json("https://www.bloomberg.com/markets/api/bulk-time-series/price/USDGEL%3ACUR?timeFrame=5_YEAR")
         .get(function(error, callBackData) { 
             if(error) throw error;
-            debugger;
             parsedData = callBackData[0].price.map(v=> {return {date: parseDate(v.date),value:+v.value}});
             ProcessData();
 });
