@@ -9,6 +9,7 @@ This repo will serve js scripts, which can be injected into websites using conso
 # Sites : 
 
 + [Bloomberg](#bloomberg)
++ [Upwork](#upwork)
 
 
 
@@ -22,6 +23,33 @@ This repo will serve js scripts, which can be injected into websites using conso
 
 
 # Sites Detail
+## Upwork
+```javascript
+// replace links
+setInterval(w=>{
+
+        var refs = ["ref"];
+
+
+        $('a').each((i,a)=>{
+            var url = $(a).attr('href');
+            if(url){
+                refs.forEach(ref=>{
+                    var strName=ref;
+                    var refIndex = url.indexOf(strName+"=");
+
+                    if(refIndex>1){
+                        var result = url.match(`(.*)(${strName}=)(.*)(&|$)`,'i');
+                        var actualLink = unescape(result[3]);
+                        $('a').attr('href',actualLink);
+                    }
+                });
+            }
+        });
+    },1000);
+
+```
+
 ## Bloomberg
 **author:**  
 [tamo](https://github.com/ta-moon-a)  
